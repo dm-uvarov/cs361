@@ -1,0 +1,19 @@
+{
+  "name": "it",
+  "version": "1.0.0",
+  "description": "simple button",
+  "main": "server.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node server.mjs",
+    "start": "nodemon server.mjs"
+  },
+  "author": "Dmitry Uvarov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.20"
+  }
+}
