@@ -16,9 +16,9 @@ async function read() {
 
 async function writeRandNum(){
   try {
-    randNumber = Math.floor(Math.random() * 3);
+    randNumber = Math.floor(Math.random() * 15);
     await fs.writeFile('../pipes/prng-service.txt',randNumber.toString(),{flag: 'w+'},()=>{})
-     console.log(`write random number from 0 to 2 to file prng-service.txt: ${randNumber}`)
+     console.log(`write random number from 0 to 15 to file prng-service.txt: ${randNumber}`)
      console.log
   } catch (er) {
     console.log('error:',er.message);
@@ -33,4 +33,4 @@ async function routine(){
   }
 }
 
-setInterval(routine, 3000);
+setInterval(routine, 2000);
