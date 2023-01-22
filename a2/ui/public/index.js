@@ -5,8 +5,10 @@
 // const fs = require('fs');
 // var fs = require('fs');
 
-//import { promises as fs } from 'fs';
+// import { setMaxIdleHTTPParsers } from "http";
 
+//import { promises as fs } from 'fs';
+const imageE = document.querySelector("#img")
 const urlRun = ('http://localhost:3000/run')
 const urlImage = (('http://localhost:3000/image') )
 
@@ -26,20 +28,22 @@ async function fetchRun() {
   // return image
 }
 
-async function fetchToImage(data) {
-  const response = await fetch(`${urlImage}/${data.toString()}`);
+
+
+async function fetchToImage() {
+  const response = await fetch(`${urlImage}`);
   const data = await response.json();
-  console.log('data:',data);
-  // const image = await response.json();
-  // // waits until the request completes...
-  // console.log(image);
-  // return image
+  console.log('image:',data);
+  await (imageE.src = data);
 }
 btn.addEventListener('click', (e)=>{
   //WriteRunMSG();
+  e.preventDefault();
   console.log('click')
-  fetchRun().then(r=>{console.log();
-  })
+  fetchRun().then(
+  )
+  setTimeout(fetchToImage()
+    ,2000)
 }
 
 )

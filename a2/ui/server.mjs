@@ -11,7 +11,7 @@ app.use(express.urlencoded({
   extended: true
 }));
 
-app.use(express.static('public'));
+app.use(express.static('../public'));
 
 async function WriteRunMSG(){
   try {
@@ -52,14 +52,18 @@ async function readImgUrl() {
   }
 
 }
+var resp ;
 async function routine() {
   const r= await read();
 
   if (r != 'run'){
     await writeNumberMSG(r)
+    setTimeout(()=>{
+      routine2();
+    },3000)
+    
   }
 }
-var resp 
 
 async function routine2() {
   resp = await readImgUrl();
@@ -67,19 +71,30 @@ async function routine2() {
 }
 
 
-setInterval(routine,1000)
+// setInterval(routine,3000)
 
-setInterval(routine2,1000)
+// setInterval(routine2,1000)
 
 app.get("/run", (_,res)=>{
   WriteRunMSG()
+  
+  setTimeout(()=>{routine()},1500)
+  setTimeout(()=>{routine2()},1500)
+
+  // var jsondata = JSON.stringify(resp)
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  // console.log('jsondata:', jsondata)
+  res.send(JSON.stringify({"image": "is processing"}));
+})
+
+app.get("/image", (_,res)=>{
   var jsondata = JSON.stringify(resp)
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
   console.log('jsondata:', jsondata)
   res.send(jsondata);
 })
-
 
 
 app.listen(PORT, ()=> {

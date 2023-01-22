@@ -2,7 +2,7 @@ import { readFile } from 'fs/promises';
 import fs from 'fs';
 
 const imageLink = (num) =>{
-  return (`./public/${num}.jpg`)
+  return (`./images/${num}.jpg`)
 } 
 
 async function readNum() {
@@ -19,7 +19,7 @@ async function readNum() {
 async function writeImageLink(imageLink){
   try {
     
-    await fs.writeFile('../pipes/prng-service.txt',imageLink,{flag: 'w+'},()=>{})
+    await fs.writeFile('../pipes/image-service.txt',imageLink,{flag: 'w+'},()=>{})
      console.log(`write image link to file image-service.txt: ${imageLink}`)
      
   } catch (er) {
@@ -27,16 +27,17 @@ async function writeImageLink(imageLink){
   }
 }
 
+var r = 0;
 
 const re = new RegExp('.jpg')
 
 async function routine(){
   
-  const r =  await readNum()
+  r =  await readNum()
   if (!r.match(re)) {
     const link = imageLink(r)
     await writeImageLink(link);
   }
 }
 
-setInterval(routine, 2000);
+setInterval(routine, 1000);

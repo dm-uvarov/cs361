@@ -33,4 +33,4 @@ async function routine(){
   }
 }
 
-setInterval(routine, 2000);
+setInterval(routine, 1000);
