@@ -60,7 +60,7 @@ async function routine() {
     await writeNumberMSG(r)
     setTimeout(()=>{
       routine2();
-    },3000)
+    },100)
     
   }
 }
@@ -78,8 +78,8 @@ async function routine2() {
 app.get("/run", (_,res)=>{
   WriteRunMSG()
   
-  setTimeout(()=>{routine()},1500)
-  setTimeout(()=>{routine2()},1500)
+  setTimeout(()=>{routine()},60)
+  setTimeout(()=>{routine2()},60)
 
   // var jsondata = JSON.stringify(resp)
   res.header("Access-Control-Allow-Origin", "*");

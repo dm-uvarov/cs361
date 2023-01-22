@@ -31,6 +31,7 @@ async function fetchRun() {
 
 
 async function fetchToImage() {
+  await new Promise(resolve => setTimeout(resolve, 200));
   const response = await fetch(`${urlImage}`);
   const data = await response.json();
   console.log('image:',data);
@@ -40,10 +41,9 @@ btn.addEventListener('click', (e)=>{
   //WriteRunMSG();
   e.preventDefault();
   console.log('click')
-  fetchRun().then(
-  )
-  setTimeout(fetchToImage()
-    ,2000)
+  fetchRun()
+  
+  fetchToImage()
 }
 
 )
