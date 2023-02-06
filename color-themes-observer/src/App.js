@@ -1,5 +1,8 @@
 
 import './App.css';
+import styled from 'styled-components';
+import { useState } from 'react';
+
 
 function App() {
   // ============== TO DO ===============
@@ -7,12 +10,25 @@ function App() {
   //pages
   // header, footer, layout, navbar?
   // include router here 
+  const DefaultColors = createGlobalStyle`
+  html {
+    --brightest: hsla(50, 100%, 50%, 1);
+    --darkest: hsla(50, 100%, 20%, 1);
+    --middle: hsla(50, 100%, 70%, 1);
+    --middlet: hsla(50, 100%, 70%, 0.3);
+    --lightest: hsla(50, 100%, 90%, 1);
+    --transparent: hsla(50, 100%, 65%, 0.1);
+  }
+`;
+
+  const [colors, setcolors] = useState([DefaultColors])
+
   return (
     <>
       <header>
         <h1>logo here</h1>
-        <span>Random stylized button</span>
-        <p>welcome guest!</p>
+        <span><button>Random stylized button</button></span>
+        <p>welcome, guest!</p>
         <button>login/logout</button>
       </header>
       <main>
