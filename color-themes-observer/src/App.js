@@ -10,18 +10,18 @@ function App() {
   //pages
   // header, footer, layout, navbar?
   // include router here 
-  const DefaultColors = createGlobalStyle`
-  html {
-    --brightest: hsla(50, 100%, 50%, 1);
-    --darkest: hsla(50, 100%, 20%, 1);
-    --middle: hsla(50, 100%, 70%, 1);
-    --middlet: hsla(50, 100%, 70%, 0.3);
-    --lightest: hsla(50, 100%, 90%, 1);
-    --transparent: hsla(50, 100%, 65%, 0.1);
-  }
-`;
-
-  const [colors, setcolors] = useState([DefaultColors])
+//   const DefaultColors = createGlobalStyle`
+//   html {
+//     --brightest: hsla(50, 100%, 50%, 1);
+//     --darkest: hsla(50, 100%, 20%, 1);
+//     --middle: hsla(50, 100%, 70%, 1);
+//     --middlet: hsla(50, 100%, 70%, 0.3);
+//     --lightest: hsla(50, 100%, 90%, 1);
+//     --transparent: hsla(50, 100%, 65%, 0.1);
+//   }
+// `;
+//DefaultColors
+  const [colors, setcolors] = useState([])
 
   return (
     <>
