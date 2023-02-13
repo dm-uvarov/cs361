@@ -1,0 +1,19 @@
+{
+  "name": "rs-microservice",
+  "version": "1.0.0",
+  "description": "random strings",
+  "main": "microservice.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "node microservice.mjs",
+    "start": "nodemon microservice.mjs"
+  },
+  "author": "Dmitry Uvarov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.20",
+    "dotenv": "^16.0.0"
+  }
+}

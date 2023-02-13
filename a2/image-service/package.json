@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "node image-service.mjs.mjs",
-    "start": "nodemon image-service.mjs.mjs"
+    "server": "node image-service.mjs",
+    "start": "nodemon image-service.mjs"
   },
   "author": "Dmitry Uvarov",
   "license": "ISC",
