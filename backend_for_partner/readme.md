@@ -16,3 +16,5 @@ service accept GET HTTP request with '/random' in URL, and return random string 
 * How to recieve data: response promise on above request  will contains random string like :
 "{"rs":"Iq1iBrWgI9lFsbW32vbWmp2FOouxn46hJRnhIOuEU5o4xNvF8uTpQ8wojAbbRpoiZb4YlnfLwpuMj9sWksBT"}
 "
+
+## UML Sequence Diagram
