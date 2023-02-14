@@ -2,7 +2,6 @@
 import express from 'express';
 import 'dotenv/config';
 
-const runMSG = "run"
 const app = express();
 const PORT = process.env.PORT
 
@@ -12,7 +11,7 @@ app.use(express.urlencoded({
 
 function makeRandomString(len) {
   let result = '';
-  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ';
   const charsLength = chars.length;
   let i = 0;
   while (i < len) {
@@ -34,11 +33,12 @@ const makeLen = ()=>{
 
 
 app.get("/random", (_,res)=>{
+  console.log("recieved http get request. proceed")
   response.rs = makeRandomString(makeLen())
   var jsondata = JSON.stringify(response);
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "X-Requested-With");
-  // console.log('jsondata:', jsondata)
+  console.log('send data:', jsondata)
   res.send(jsondata);
 })
 
