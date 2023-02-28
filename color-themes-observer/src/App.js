@@ -1,8 +1,9 @@
 
 import './App.css';
 import styled from 'styled-components';
-import { useState } from 'react';
+import { useState,useNavigate } from 'react';
 import Modal from './components/Modal';
+
 
 function App() {
   // ============== TO DO ===============
