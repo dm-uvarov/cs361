@@ -2,7 +2,7 @@
 import './App.css';
 import styled from 'styled-components';
 import { useState } from 'react';
-
+import Modal from './components/Modal';
 
 function App() {
   // ============== TO DO ===============
@@ -47,6 +47,8 @@ function App() {
         </aside>
       </main>
       <footer>legal info</footer>
+      <hr></hr>
+      <Modal />
     </>
   );
 }

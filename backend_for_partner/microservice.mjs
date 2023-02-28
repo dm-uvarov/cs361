@@ -26,7 +26,7 @@ function makeRandomString(len) {
 let response = {'rs' : 'default String'};
 
 const makeLen = ()=>{
-  let seedLength = Math.floor(Math.random()*254 +1)
+  let seedLength = Math.floor(Math.random()*49 +1)
   return seedLength
 }
 
