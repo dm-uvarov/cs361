@@ -1,7 +1,7 @@
 
 import './App.css';
 import styled from 'styled-components';
-import { useState,useNavigate } from 'react';
+import { useState,useNavigate, useEffect } from 'react';
 import Modal from './components/Modal';
 
 
@@ -22,7 +22,33 @@ function App() {
 //   }
 // `;
 //DefaultColors
-  const [colors, setcolors] = useState([])
+  const [colors, setcolors] = useState([]);
+  const [cite,setCite] = useState();
+
+  const [isShow,setIsShow] = useState(false);
+
+  const URL_micro = "http://localhost:8080/QuoteOfTheDay";
+
+  const loadCite = async () => {
+      const r = await fetch(URL_micro);
+
+      const c = await r.json();
+
+      console.log(c)
+
+      if (!cite) {setCite(c)};
+      console.log(cite)
+  }
+
+  useEffect ( () => {
+    loadCite();
+  }, []);
+
+  function handleClick(e){
+    e.preventDefault();
+    setIsShow(!isShow); 
+  }
+
 
   return (
     <>
@@ -49,7 +75,12 @@ function App() {
       </main>
       <footer>legal info</footer>
       <hr></hr>
-      <Modal />
+
+ {/*     <button onClick = {e=>handleClick(e)}>show quote of the day</button>
+      {isShow ?   
+      <Modal cite={cite}/>:<></>} */}
+      {cite ? <Modal cite={cite}/>:<></>}
+
     </>
   );
 }

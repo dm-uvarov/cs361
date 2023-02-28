@@ -26,3 +26,20 @@ article p {
   background-color: var(--lightest);
   color: var(--darkest);
 }
+
+
+
+body {
+  margin: 1rem;
+  font: 1.2rem/1.4 Georgia, serif;
+}
+.quote {
+  margin: 0;
+  background: #eee;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+.quote figcaption,
+.quote blockquote {
+  margin: 1rem;
+}
