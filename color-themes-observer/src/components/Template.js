@@ -16,11 +16,15 @@ export default function Template() {
       <br></br>
       <hr></hr>
       <form>
-        <caption>form example</caption>
-        <input type="text" placeholder="textfield"></input>
-        <button >button</button>
+      <fieldset>
+        <legend>example form</legend>
+        
+          <span>form example</span>
+          <input type="text" placeholder="textfield"></input>
+          <button >button</button>
+        
+      </fieldset>
       </form>
-
       <table>
         <caption>example of table</caption>
         <thead>
