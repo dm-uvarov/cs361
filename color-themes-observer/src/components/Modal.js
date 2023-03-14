@@ -3,22 +3,13 @@ import { useState } from "react";
 
 export default function Modal({cite}) {
 
-    const {Author, QOD} = cite;
-//    console.log(cite)
-//    console.log(Author);
-//    console.log(QOD);
+    const {author, quote} = cite[0];
 
     let blockquote;
     let figcaption;
-   // if (cite) {
-      blockquote = <blockquote>{cite.QOD}</blockquote>;
-      figcaption = <figcaption> &mdash; {cite["Author"]} <cite>https://api-ninjas.com/</cite></figcaption>;
-        
-//    } else {
- //     blockquote = <blockquote>here will be cite of the day</blockquote>;
- //     figcaption = <figcaption> &mdash; author's name here</figcaption>;
- //   }
 
+    blockquote = <blockquote style={{ color: 'orange'}}>{quote}</blockquote>;
+    figcaption = <figcaption style={{ color: ''}}> &mdash; {author} <span style={{ color: 'grey'}}>from</span> <cite style={{ color: 'green'}}>https://api-ninjas.com/</cite></figcaption>;
 
 
   return (

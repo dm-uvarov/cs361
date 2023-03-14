@@ -32,6 +32,7 @@ article p {
 body {
   margin: 1rem;
   font: 1.2rem/1.4 Georgia, serif;
+  background-color: rgb(154, 208, 244);
 }
 .quote {
   margin: 0;
@@ -42,4 +43,8 @@ body {
 .quote figcaption,
 .quote blockquote {
   margin: 1rem;
+}
+
+header {
+  display: flex;
 }

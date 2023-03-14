@@ -3,6 +3,8 @@ import './App.css';
 import styled from 'styled-components';
 import { useState,useNavigate, useEffect } from 'react';
 import Modal from './components/Modal';
+import Template from './components/Template';
+import Header from './components/Header';
 
 
 function App() {
@@ -34,10 +36,8 @@ function App() {
 
       const c = await r.json();
 
-      console.log(c)
-
       if (!cite) {setCite(c)};
-      console.log(cite)
+
   }
 
   useEffect ( () => {
@@ -52,19 +52,10 @@ function App() {
 
   return (
     <>
-      <header>
-        <h1>logo here</h1>
-        <span><button>Random stylized button</button></span>
-        <p>welcome, guest!</p>
-        <button>login/logout</button>
-      </header>
+      <Header />
       <main>
         <section>
-          <article>
-            <h2> content to be changed </h2>
-            <h3>header example</h3>
-            <p>text here</p>
-          </article>
+          <Template />
         </section>
         <aside>
           <h2>menu with color schemas</h2>
