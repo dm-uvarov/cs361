@@ -27,7 +27,7 @@ function App() {
   const [colors, setcolors] = useState([]);
   const [cite, setCite] = useState();
 
-  const [isShow, setIsShow] = useState(false);
+  const [isShow, setIsShow] = useState(true);
 
   const URL_micro = "http://localhost:8080/QuoteOfTheDay";
 
@@ -72,8 +72,9 @@ function App() {
       {/*     <button onClick = {e=>handleClick(e)}>show quote of the day</button>
       {isShow ?   
       <Modal cite={cite}/>:<></>} */}
-      {cite ? <Modal cite={cite} /> : <></>}
-
+      
+      {(cite&&isShow) ? <Modal cite={cite} setIsShow={setIsShow}  /> : <></>}
+      
     </>
   );
 }

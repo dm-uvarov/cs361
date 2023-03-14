@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Modal({ cite }) {
+export default function Modal({ cite,setIsShow }) {
 
   const { author, quote } = cite[0];
 
@@ -9,22 +9,22 @@ export default function Modal({ cite }) {
   let figcaption;
 
   blockquote = <blockquote style={{
-      color: 'orange',
-      fontWeight: "600",
-      fontStyle: "italic",
-      textIndent: "1rem"
-    }}>{quote}
+    color: 'orange',
+    fontWeight: "600",
+    fontStyle: "italic",
+    textIndent: "1rem"
+  }}>{quote}
   </blockquote>;
 
   figcaption = <figcaption style={{
-      display: "flex",
-      justifyContent: "flex-end",
-      gap: "0.3rem",
-      color: ''
-    }}> &mdash; 
-    
-    <span style={{ fontWeight:"550",color: "var(--brightest2)" }}>{author}</span>
-    
+    display: "flex",
+    justifyContent: "flex-end",
+    gap: "0.3rem",
+    color: ''
+  }}> &mdash;
+
+    <span style={{ fontWeight: "550", color: "var(--brightest2)" }}>{author}</span>
+
     <span style={{ color: 'grey' }}> from </span>
     <cite style={{ color: 'green' }}>https://api-ninjas.com/
     </cite>
@@ -32,13 +32,22 @@ export default function Modal({ cite }) {
 
 
   return (
-    <div className="modal">
+    <div className="container" >
+      <div className="modal">
 
-      <figure className='quote'>
-        <h4>Cite of The Day</h4>
-        {blockquote}
-        {figcaption}
-      </figure>
+        <figure className='quote'>
+          <h4>Cite of The Day</h4>
+          {blockquote}
+          {figcaption}
+          <div className="btn-container">
+          <button 
+            className="closeBtn"
+            onClick={() => setIsShow(false)}
+          >Close</button>
+          </div>
+        </figure>
+  
+      </div>
     </div>
   );
 
