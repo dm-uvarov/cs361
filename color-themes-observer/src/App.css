@@ -1,12 +1,10 @@
 
 
 :root {
-  --brightest: hsla(50, 100%, 50%, 1);
-  --darkest: hsla(50, 100%, 20%, 1);
-  --middle: hsla(50, 100%, 70%, 1);
-  --middlet: hsla(50, 100%, 70%, 0.3);
-  --lightest: hsla(50, 100%, 90%, 1);
-  --transparent: hsla(50, 100%, 65%, 0.1);
+  --brightest: hsla(193, 100%, 50%, 1);
+  --darkest: hsla(193, 100%, 20%, 1);
+  --lightest: hsla(193, 100%, 87%, 1);
+  --transparent: hsla(193, 100%, 63%, 0.1);
 
   --brightest2: hsla(208, 100%, 60%, 1);
   --darkest2: hsla(208, 100%, 40%, 1);
@@ -148,7 +146,7 @@ li {
 
 .column-wide{
   float:left;
-  width:48%;
+  width:64%;
   margin-right: 2%;
 }
 .row:after {
@@ -161,3 +159,4 @@ h1,h2,h3,h4,h5,h6{
   margin-top:0.5rem;
   margin-bottom: 0.5rem;
 }
+
