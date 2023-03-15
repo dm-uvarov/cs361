@@ -30,6 +30,7 @@ function App() {
   const [isShow, setIsShow] = useState(true);
 
   const URL_micro = "http://localhost:8080/QuoteOfTheDay";
+  
 
   const loadCite = async () => {
     const r = await fetch(URL_micro);
@@ -69,9 +70,6 @@ function App() {
       <footer>made by Dmitry Uvarov 2023</footer>
       <hr></hr>
 
-      {/*     <button onClick = {e=>handleClick(e)}>show quote of the day</button>
-      {isShow ?   
-      <Modal cite={cite}/>:<></>} */}
       
       {(cite&&isShow) ? <Modal cite={cite} setIsShow={setIsShow}  /> : <></>}
       

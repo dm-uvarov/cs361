@@ -6,8 +6,24 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-Colour.create(dark: 120, light: 120, bright:120, transp:120 );
-Colour.create(dark: 90, light: 90, bright:90, transp:90 );
-Colour.create(dark: 270, light: 270, bright:270, transp:270 );
+Theme.create(name: 'default blue',
+  darkest: 'hsla(210, 100%, 50%, 1)', 
+  lightest: 'hsla(210, 100%, 21%, 1)', 
+  brightest: 'hsla(210, 100%, 88%, 1)', 
+  transparent: 'hsla(210, 100%, 64%, 0.2)' );
+
+Theme.create(name: 'default green',
+      darkest: 'hsla(136, 100%, 50%, 1)', 
+      lightest: 'hsla(136, 100%, 21%, 1)', 
+      brightest: 'hsla(136, 100%, 88%, 1)', 
+      transparent: 'hsla(136, 100%, 64%, 0.2)' );
+
+Theme.create(name: 'default purple',
+      darkest: 'hsla(274, 100%, 50%, 1)', 
+      lightest: 'hsla(274, 100%, 21%, 1)', 
+      brightest: 'hsla(274, 100%, 88%, 1)', 
+      transparent: 'hsla(274, 100%, 64%, 0.2)' );
+
+
 
 

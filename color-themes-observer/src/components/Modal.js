@@ -41,6 +41,7 @@ export default function Modal({ cite,setIsShow }) {
           {figcaption}
           <div className="btn-container">
           <button 
+            id ="modal"
             className="closeBtn"
             onClick={() => setIsShow(false)}
           >Close</button>

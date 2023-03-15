@@ -2,9 +2,9 @@
 
 :root {
   --brightest: hsla(193, 100%, 50%, 1);
-  --darkest: hsla(193, 100%, 20%, 1);
-  --lightest: hsla(193, 100%, 87%, 1);
-  --transparent: hsla(193, 100%, 63%, 0.1);
+  --darkest: hsla(193, 100%, 21%, 1);
+  --lightest: hsla(193, 100%, 88%, 1);
+  --transparent: hsla(193, 100%, 64%, 0.2);
 
   --brightest2: hsla(208, 100%, 60%, 1);
   --darkest2: hsla(208, 100%, 40%, 1);

@@ -1,2 +1,0 @@
-class Colour < ApplicationRecord
-end

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_14_043658) do
-  create_table "colours", force: :cascade do |t|
-    t.integer "dark"
-    t.integer "light"
-    t.integer "bright"
-    t.integer "transp"
+ActiveRecord::Schema[7.0].define(version: 2023_03_15_005113) do
+  create_table "themes", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "darkest", null: false
+    t.string "lightest", null: false
+    t.string "brightest", null: false
+    t.string "transparent", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
