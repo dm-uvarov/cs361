@@ -5,6 +5,7 @@ import { useState, useNavigate, useEffect } from 'react';
 import Modal from './components/Modal';
 import Template from './components/Template';
 import Header from './components/Header';
+import ThemeButton from './components/ThemeButton';
 
 
 function App() {
@@ -24,13 +25,14 @@ function App() {
   //   }
   // `;
   //DefaultColors
-  const [colors, setcolors] = useState([]);
+  const [themes, setThemes] = useState([]);
+  const [currentTheme, setCurrentTheme] = useState();
   const [cite, setCite] = useState();
 
   const [isShow, setIsShow] = useState(true);
 
   const URL_micro = "http://localhost:8080/QuoteOfTheDay";
-  
+  const URL_themes = "http://localhost:8000/themes";
 
   const loadCite = async () => {
     const r = await fetch(URL_micro);
@@ -41,14 +43,30 @@ function App() {
 
   }
 
+  const loadThemes = async () => {
+    const promise = await fetch(URL_themes);
+
+    const themesArray = await promise.json();
+
+    setThemes(themesArray) ;
+  }
+  
+
   useEffect(() => {
     loadCite();
+    loadThemes();
+    setCurrentTheme(themes[0]);
   }, []);
 
-  function handleClick(e) {
-    e.preventDefault();
-    setIsShow(!isShow);
-  }
+const  listThemes = themes.map((theme)=> {
+  return(
+  <ThemeButton 
+    key={theme.id} 
+    theme={theme} 
+  />
+  )
+  })
+
 
 
   return (
@@ -56,10 +74,8 @@ function App() {
       <Header />
       <main className="row">
         <aside className="column">
-          <ul style={{ listStyleType: "none" }}><h5>default schemas:</h5>
-            <li>schema 1</li>
-            <li>schema 2</li>
-            <li>schema 3</li>
+          <ul style={{ listStyleType: "none" }}><h5>Schemas:</h5>
+            {listThemes}
           </ul>
         </aside>
         <section>
