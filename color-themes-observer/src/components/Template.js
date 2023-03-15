@@ -13,7 +13,15 @@ export default function Template() {
       <h3>h5</h3>
       <h3>h6</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      <br></br>
+      <ul> list 
+        <li>list item 1</li>
+        <li>list item 2</li>
+      </ul> 
+      <ol> numbered list
+        <li>list item 1</li>
+        <li>list item 2</li>
+      </ol>
+
       <hr></hr>
       <form>
       <fieldset>
@@ -21,7 +29,7 @@ export default function Template() {
         
           <span>form example</span>
           <input type="text" placeholder="textfield"></input>
-          <button >button</button>
+          <button disabled>button</button>
         
       </fieldset>
       </form>

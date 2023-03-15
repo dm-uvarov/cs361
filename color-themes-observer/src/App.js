@@ -63,6 +63,7 @@ const  listThemes = themes.map((theme)=> {
   <ThemeButton 
     key={theme.id} 
     theme={theme} 
+    setCurrentTheme={setCurrentTheme}
   />
   )
   })
@@ -74,7 +75,9 @@ const  listThemes = themes.map((theme)=> {
       <Header />
       <main className="row">
         <aside className="column">
-          <ul style={{ listStyleType: "none" }}><h5>Schemas:</h5>
+          <ul
+            className='menu' 
+            style={{ listStyleType: "none" }}><h5 style={{color: "var(--darkpurple)"}}>Schemas:</h5>
             {listThemes}
           </ul>
         </aside>

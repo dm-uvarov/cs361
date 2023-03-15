@@ -12,7 +12,7 @@ export default function Header() {
         <span style={{color:"var(--brightpurple)"}}>hanger </span> 
       </h1>
       {/* <span><button>Random stylized button</button></span> */}
-      <span className="item item-text">welcome, guest!</span>
+      {/* <span className="item item-text">welcome, guest!</span> */}
       {/* <button>login/logout</button> */}
     </header>
   )
